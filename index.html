@@ -92,6 +92,13 @@
       font-size: 1rem;
       margin: 0 0.5rem;
     }
+    .carousel .description {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 800px;
+      text-align: center;
+    }
     .post-it {
       background: #ffeb3b;
       padding: 2rem;
@@ -115,13 +122,17 @@
   <!-- Popup -->
   <div class="popup" id="popup">
     <div class="popup-content">
-      <h2>Happy Birthday, Ridihmah! 🎉</h2>
-      <p>We hope you have the most amazing day ever!</p>
-      <button onclick="startAlbum()">Let’s Celebrate!</button>
+      <h2>What the helly is u doin on here RihDIHmah! 🎉</h2>
+      <p>Happy birthday to this baddie, not finna say much, but theres a lot on here u have to know, shall we!</p>
+      <button onclick="startAlbum()">Let’s Go!</button>
     </div>
   </div>
 
-  <!-- Carousel -->
+  <!-- Post-it Note -->
+
+
+<!-- Carousel -->
+<div class="container">
   <div class="carousel" id="carousel">
     <img id="carousel-image" src="image1.jpg" alt="Memory 1">
     <p class="description" id="carousel-description">This is Memory 1</p>
@@ -130,13 +141,15 @@
       <button onclick="nextImage()">Next</button>
     </div>
   </div>
+</div>
 
-  <!-- Post-it Note -->
+<div class="container">
   <div class="post-it">
-    <p>Dear Ridihmah,</p>
-    <p>You are an amazing person, and I’m so lucky to have you in my life. Wishing you all the happiness in the world on your special day!</p>
-    <p>Love, Ishita 💖</p>
+    <p>Now time for the annual bday note of the year,</p>
+    <p>Holy shit this bihhh 16. Aight so for the love of tung tung tung sahur, I might have lost this baddie to the brainrot gods. Jokes apart--I physically cant, all these years from 7th grade have been times to remember. From being NEAR to opps in 7th grade during the pin drop silence car rides to RSM, to the nonstop yapping otw back home from school, everything I cannot physically forget, not that i want to. These days have been amazing, and i really mean it when I don't want this to end. This bihhhh better keep talkin to me after hs, as ur pretty locked in with me till graduation bc u still havent returned that pencil pouch. I'm not the best at communicating and you probably know that by now, but you are of SIGNIFICANT value to me. Thanks is not enough, not even this website to show that. you've been there for the best and the worst, which is a sign to me. live up the sweet 16th and i hope you have the best day ever, and i also hope that those blue cat eye'd nails do end up matching with your definetely beautiful dress.</p>
+    <p>I don't say it enough but I love u chat 💖</p>
   </div>
+</div>
 
   <!-- Footer -->
   <footer>
@@ -159,17 +172,18 @@
     function startAlbum() {
       document.getElementById('popup').style.display = 'none';
       document.getElementById('carousel').style.display = 'flex';
+      updateCarousel(); // Ensure the first image is loaded
       launchConfetti();
     }
 
     // Carousel functionality
     const images = [
-      { src: 'Memory 1.png', description: 'This is Memory 1' },
-      { src: 'Memory 2.png', description: 'This is Memory 2' },
-      { src: 'Memory 3.JPG', description: 'This is Memory 3' },
-      { src: 'Memory 4.JPG', description: 'This is Memory 4' },
-      { src: 'Memory 5.png', description: 'This is Memory 4' },
-      { src: 'Memory 6.png', description: 'This is Memory 4' }
+      { src: 'Memory 2.png', description: 'Best day #1, i dont have to say much but this day will neva forget. i had the best time and our busy ahhs cannot recreate it again but the attempt will be continous.' },
+      { src: 'Memory 1.png', description: 'Best day #2, again, not to say much, holy food, nah kidding i again had the best time another day i can never unsee and would never want to' },
+      { src: 'Memory 3.JPG', description: 'Best day #3, holy food AGAIN nah kidding but genuinely all of these times were so fun and calm, the choco mini waffles, the fries, the boba, and maybe YOU! im not gonna say much bc nonchalant image overhere but yk it, I had the best time.' },
+      { src: 'Memory 4.JPG', description: 'HOCO! I showed up and it was genuinely so cute to see u and IG i guess "Aahan", but i really DO NOT want to talk about anyone else on this webside. It was so cute to see that ygs were finally a thing after all these years and cupid, in the time we had it was amazing.'},
+      { src: 'Memory 5.png', description: 'DIYA FUNC --> This day was really fun, you bus a coupla dance moves aight aight my Tyla, favorite pic hands down but it was again a really fun day,' },
+      { src: 'Memory 6.png', description: 'ACOUSTIC AHHS nah kidding u baddie'}
     ];
     let currentIndex = 0;
 
