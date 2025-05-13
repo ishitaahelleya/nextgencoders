@@ -60,19 +60,37 @@
       cursor: pointer;
       font-size: 1rem;
     }
-    .album {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      padding: 2rem;
+    .carousel {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       background: #fff;
     }
-    .album img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
+    .carousel img {
+      max-width: 80%;
+      max-height: 60vh;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .carousel .description {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .carousel .controls {
+      margin-top: 1rem;
+    }
+    .carousel button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0 0.5rem;
     }
     .post-it {
       background: #ffeb3b;
@@ -99,21 +117,18 @@
     <div class="popup-content">
       <h2>Happy Birthday, Ridihmah! 🎉</h2>
       <p>We hope you have the most amazing day ever!</p>
-      <button onclick="closePopup()">Let’s Celebrate!</button>
+      <button onclick="startAlbum()">Let’s Celebrate!</button>
     </div>
   </div>
 
-  <!-- Header -->
-  <header>
-    <h1>Happy Birthday, Ridihmah! 🎂</h1>
-  </header>
-
-  <!-- Scrolling Album -->
-  <div class="album">
-    <img src="image1.jpg" alt="Memory 1">
-    <img src="image2.jpg" alt="Memory 2">
-    <img src="image3.jpg" alt="Memory 3">
-    <img src="image4.jpg" alt="Memory 4">
+  <!-- Carousel -->
+  <div class="carousel" id="carousel">
+    <img id="carousel-image" src="image1.jpg" alt="Memory 1">
+    <p class="description" id="carousel-description">This is Memory 1</p>
+    <div class="controls">
+      <button onclick="prevImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+    </div>
   </div>
 
   <!-- Post-it Note -->
@@ -131,7 +146,7 @@
   <!-- Confetti Script -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
-    // Show confetti
+    // Confetti function
     function launchConfetti() {
       confetti({
         particleCount: 100,
@@ -140,10 +155,37 @@
       });
     }
 
-    // Close popup and launch confetti
-    function closePopup() {
+    // Close popup and start album
+    function startAlbum() {
       document.getElementById('popup').style.display = 'none';
+      document.getElementById('carousel').style.display = 'flex';
       launchConfetti();
+    }
+
+    // Carousel functionality
+    const images = [
+      { src: 'image1.jpg', description: 'This is Memory 1' },
+      { src: 'image2.jpg', description: 'This is Memory 2' },
+      { src: 'image3.jpg', description: 'This is Memory 3' },
+      { src: 'image4.jpg', description: 'This is Memory 4' }
+    ];
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const imageElement = document.getElementById('carousel-image');
+      const descriptionElement = document.getElementById('carousel-description');
+      imageElement.src = images[currentIndex].src;
+      descriptionElement.textContent = images[currentIndex].description;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
     }
   </script>
 </body>
