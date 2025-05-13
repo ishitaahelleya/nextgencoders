@@ -2,46 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NextGen Coders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Ridihmah!</title>
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: #f7f9fc;
       color: #333;
+      overflow-x: hidden;
     }
     header {
-      background-color: #4f46e5;
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 2rem;
+      background-color: #ff69b4;
+      color: white;
     }
     header h1 {
+      font-size: 2.5rem;
       margin: 0;
-      font-size: 2rem;
     }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
     }
-    .card {
+    .popup-content {
       background: white;
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
-    .button {
-      display: inline-block;
-      background-color: #4f46e5;
+    .popup-content h2 {
+      margin: 0 0 1rem;
+      font-size: 2rem;
+      color: #ff69b4;
+    }
+    .popup-content button {
+      background: #ff69b4;
       color: white;
-      padding: 0.75rem 1.25rem;
-      text-decoration: none;
+      border: none;
+      padding: 0.5rem 1rem;
       border-radius: 8px;
-      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .album {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 2rem;
+      background: #fff;
+    }
+    .album img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .post-it {
+      background: #ffeb3b;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
     }
     footer {
       text-align: center;
@@ -53,27 +94,57 @@
 </head>
 <body>
 
-  <header>
-    <h1>NextGen Coders Bootcamp</h1>
-    <p>iOS App Development for Future Builders 🚀</p>
-  </header>
-
-  <div class="container">
-    <div class="card">
-      <h2>Welcome!</h2>
-      <p>We’re thrilled to have you here. This bootcamp helps students dive into iOS app development using Swift and SwiftUI. No experience needed—just curiosity and passion!</p>
-    </div>
-
-    <div class="card">
-      <h2>Join the Bootcamp</h2>
-      <p>The summer session includes 16 interactive classes, real project building, and mentoring in small groups.</p>
-      <a href="https://hcb.hackclub.com/donations/start/nextgen-coders-ios-app-development-bootcamp" class="button">Register Now ($160)</a>
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>Happy Birthday, Ridihmah! 🎉</h2>
+      <p>We hope you have the most amazing day ever!</p>
+      <button onclick="closePopup()">Let’s Celebrate!</button>
     </div>
   </div>
 
+  <!-- Header -->
+  <header>
+    <h1>Happy Birthday, Ridihmah! 🎂</h1>
+  </header>
+
+  <!-- Scrolling Album -->
+  <div class="album">
+    <img src="image1.jpg" alt="Memory 1">
+    <img src="image2.jpg" alt="Memory 2">
+    <img src="image3.jpg" alt="Memory 3">
+    <img src="image4.jpg" alt="Memory 4">
+  </div>
+
+  <!-- Post-it Note -->
+  <div class="post-it">
+    <p>Dear Ridihmah,</p>
+    <p>You are an amazing person, and I’m so lucky to have you in my life. Wishing you all the happiness in the world on your special day!</p>
+    <p>Love, Ishita 💖</p>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    © 2025 NextGen Coders • Created with 💻 by Ishita 
+    © 2025 Birthday Surprise • Made with 💖 by Ishita
   </footer>
 
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Show confetti
+    function launchConfetti() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // Close popup and launch confetti
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      launchConfetti();
+    }
+  </script>
 </body>
 </html>
