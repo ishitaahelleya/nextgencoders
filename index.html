@@ -115,6 +115,11 @@
       font-size: 0.9rem;
       color: #777;
     }
+    @keyframes flash {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+  }
   </style>
 </head>
 <body>
@@ -141,6 +146,14 @@
       <button onclick="nextImage()">Next</button>
     </div>
   </div>
+</div>
+
+<!-- BDAY Success Section -->
+<div class="container" id="bday-success" style="display: none; text-align: center; margin-top: 2rem;">
+  <h2 style="font-size: 2.5rem; color: #ff69b4; animation: flash 1s infinite;">🎉 BDAY SUCCESS! 🎉</h2>
+  <img src="Memory 7.png" alt="Memory 7" style="max-width: 80%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin: 1rem 0;">
+  <p style="font-size: 1.5rem; color: #333;">Have a great day, Ridihmah!</p>
+  <p style="font-size: 1.2rem; color: #555; font-style: italic;">"Introducing the iPhone 16... just kidding, but you're the real star today!"</p>
 </div>
 
 <div class="container">
