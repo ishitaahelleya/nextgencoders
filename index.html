@@ -2,218 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Ridihmah!</title>
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NextGen Coders Bootcamp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f7f9fc;
-      color: #333;
-      overflow-x: hidden;
-    }
-    header {
-      text-align: center;
-      padding: 2rem;
-      background-color: #ff69b4;
-      color: white;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .popup-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    .popup-content h2 {
-      margin: 0 0 1rem;
-      font-size: 2rem;
-      color: #ff69b4;
-    }
-    .popup-content button {
-      background: #ff69b4;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .carousel {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #fff;
-    }
-    .carousel img {
-      max-width: 80%;
-      max-height: 60vh;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .carousel .description {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #555;
-    }
-    .carousel .controls {
-      margin-top: 1rem;
-    }
-    .carousel button {
-      background: #ff69b4;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      margin: 0 0.5rem;
-    }
-    .carousel .description {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #555;
-      max-width: 800px;
-      text-align: center;
-    }
-    .post-it {
-      background: #ffeb3b;
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      font-family: 'Comic Sans MS', cursive;
-      text-align: center;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-    @keyframes flash {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
+    body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-sky-50 to-white text-gray-800">
 
-  <!-- Popup -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <h2>What the helly is u doin on here RihDIHmah! 🎉</h2>
-      <p>Happy birthday to this baddie, not finna say much, but theres a lot on here u have to know, shall we!</p>
-      <button onclick="startAlbum()">Let’s Go!</button>
+  <!-- Navbar -->
+  <header class="bg-white shadow-sm sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">NextGen Coders</h1>
+      <nav class="space-x-4 text-sm">
+        <a href="#about" class="hover:text-blue-500">About</a>
+        <a href="#schedule" class="hover:text-blue-500">Schedule</a>
+        <a href="#register" class="hover:text-blue-500">Register</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Carousel -->
-  <div class="container">
-    <div class="carousel" id="carousel">
-      <img id="carousel-image" src="image1.jpg" alt="Memory 1">
-      <p class="description" id="carousel-description">This is Memory 1</p>
-      <div class="controls">
-        <button onclick="prevImage()">Previous</button>
-        <button onclick="nextImage()">Next</button>
+  <!-- Hero -->
+  <section class="text-center py-20 px-4 bg-white">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">Summer Coding Bootcamp 2025</h2>
+    <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-600">Empowering 8th graders to build real apps, learn SwiftUI, APIs, and prepare for the Congressional App Challenge.</p>
+    <a href="#register" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">Join the Bootcamp</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 px-6 bg-sky-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-4 text-blue-700">What You'll Learn</h3>
+      <p class="text-gray-700 text-lg mb-8">Our hands-on bootcamp is designed for middle schoolers new to programming. Students will:</p>
+      <ul class="space-y-3 text-left text-gray-600 max-w-xl mx-auto">
+        <li>• Build mobile apps using SwiftUI</li>
+        <li>• Connect to real-time weather APIs</li>
+        <li>• Design login/signup interfaces</li>
+        <li>• Learn data storage with UserDefaults</li>
+        <li>• Compete in the Congressional App Challenge</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule" class="py-16 px-6 bg-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-4 text-blue-700">Schedule</h3>
+      <p class="text-gray-700 text-lg mb-6">Classes take place twice a week from July to August:</p>
+      <div class="grid md:grid-cols-2 gap-6 text-left">
+        <div class="p-6 bg-sky-100 rounded-xl shadow-sm">
+          <h4 class="text-xl font-semibold text-blue-800">🗓 Mondays</h4>
+          <p>Project Development & SwiftUI Components</p>
+        </div>
+        <div class="p-6 bg-sky-100 rounded-xl shadow-sm">
+          <h4 class="text-xl font-semibold text-blue-800">🗓 Wednesdays</h4>
+          <p>APIs, Debugging, and App Polish</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- BDAY Success Section -->
-  <div class="container" id="bday-success" style="display: none; text-align: center; margin-top: 2rem;">
-    <h2 style="font-size: 2.5rem; color: #ff69b4; animation: flash 1s infinite;">🎉 BDAY SUCCESS! 🎉</h2>
-    <img src="Memory 7.png" alt="Memory 7" style="max-width: 80%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin: 1rem 0;">
-    <p style="font-size: 1.5rem; color: #333;">Have a great day, Ridihmah!</p>
-    <p style="font-size: 1.2rem; color: #555; font-style: italic;">"Introducing the iPhone 16... just kidding, but you're the real star today!"</p>
-  </div>
-
-  <!-- Post-it Note -->
-  <div class="container">
-    <div class="post-it">
-      <p>Now time for the annual bday note of the year,</p>
-      <p>Holy shit this bihhh 16. Aight so for the love of tung tung tung sahur, I might have lost this baddie to the brainrot gods. Jokes apart--I physically cant, all these years from 7th grade have been times to remember. From being NEAR to opps in 7th grade during the pin drop silence car rides to RSM, to the nonstop yapping otw back home from school, everything I cannot physically forget, not that i want to. I look up to the academic weapon that you are and aspire to be somewhere around there in the ball park lmao. i admire how anything may happen but it never compromise with how hard u work and how much you accomplish, i wish for so much more in the future. These days have been amazing, and i really mean it when I don't want this to end. This bihhhh better keep talkin to me after hs, as ur pretty locked in with me till graduation bc u still havent returned that pencil pouch. I'm not the best at communicating and you probably know that by now, but you are of SIGNIFICANT value to me. Thanks is not enough, not even this website to show that. you've been there for the best and the worst, which is a sign to me. live up the sweet 16th and i hope you have the best day ever, and i also hope that those blue cat eye'd nails do end up matching with your beautiful dress.</p>
-      <p>I don't say it enough but I love u chat 💖</p>
-    </div>
-  </div>
+  <!-- Register -->
+  <section id="register" class="py-20 px-6 bg-gradient-to-br from-blue-600 to-blue-400 text-white text-center">
+    <h3 class="text-3xl font-bold mb-4">Ready to Join?</h3>
+    <p class="text-lg mb-6">Spots are limited — sign up today and unlock your coding potential.</p>
+    <a href="mailto:your-email@example.com?subject=NextGen%20Coders%20Signup" class="inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl shadow hover:bg-gray-100 transition">Register via Email</a>
+  </section>
 
   <!-- Footer -->
-  <footer>
-    © 2025 Birthday Surprise • Made with 💖 by Ishita
+  <footer class="bg-white text-center py-6 border-t text-sm text-gray-500">
+    © 2025 NextGen Coders | Created with ❤️ by Ishita Ahelleya
   </footer>
-
-  <!-- Confetti Script -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    // Confetti function
-    function launchConfetti() {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-    }
-
-    // Close popup and start album
-    function startAlbum() {
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('carousel').style.display = 'flex';
-      updateCarousel(); // Ensure the first image is loaded
-      launchConfetti();
-    }
-
-    // Carousel functionality
-    const images = [
-      { src: 'Memory 2.png', description: 'Best day #1, i dont have to say much but this day will neva forget. i had the best time and our busy ahhs cannot recreate it again but the attempt will be continous.' },
-      { src: 'Memory 1.png', description: 'Best day #2, again, not to say much, holy food, nah kidding i again had the best time another day i can never unsee and would never want to' },
-      { src: 'Memory 3.JPG', description: 'Best day #3, holy food AGAIN nah kidding but genuinely all of these times were so fun and calm, the choco mini waffles, the fries, the boba, and maybe YOU! im not gonna say much bc nonchalant image overhere but yk it, I had the best time.' },
-      { src: 'Memory 4.JPG', description: 'HOCO! I showed up and it was genuinely so cute to see u and IG i guess "Aahan", but i really DO NOT want to talk about anyone else on this webside. It was so cute to see that ygs were finally a thing after all these years and cupid, in the time we had it was amazing.'},
-      { src: 'Memory 5.png', description: 'DIYA FUNC --> This day was really fun, you bus a coupla dance moves aight aight my Tyla, favorite pic hands down but it was again a really fun day,' },
-      { src: 'Memory 6.png', description: 'ACOUSTIC AHHS nah kidding u baddie'}
-    ];
-    let currentIndex = 0;
-
-    function updateCarousel() {
-      const imageElement = document.getElementById('carousel-image');
-      const descriptionElement = document.getElementById('carousel-description');
-      imageElement.src = images[currentIndex].src;
-      descriptionElement.textContent = images[currentIndex].description;
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateCarousel();
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateCarousel();
-    }
-  </script>
 </body>
 </html>
